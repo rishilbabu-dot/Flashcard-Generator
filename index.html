@@ -1,0 +1,58 @@
+<script type="importmap">
+  {
+    "imports": {
+      "@google/genai": "https://esm.sh/@google/genai@^0.7.0"
+    }
+  }
+  </script>
+  <!-- Add Google Fonts Link -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+
+  <div class="container">
+    <div id="mainContent">
+      <h1>Flashcard Generator</h1>
+      <p>
+        Enter a topic or a list of terms and definitions to generate flashcards using the Gemini API.
+      </p>
+      <textarea
+        id="topicInput"
+        placeholder="Enter topic (e.g., Indian Cities) or 'Term: Definition' pairs (one per line)"
+      ></textarea>
+      <button id="generateButton">Generate Flashcards</button>
+      <div id="errorMessage" class="error-message" aria-live="polite"></div>
+    </div>
+
+    <div id="flashcardsContainer" class="flashcards-container">
+      <!-- Flashcards will be generated here -->
+    </div>
+    
+    <div id="quizControls" class="quiz-controls" style="display: none;">
+      <button id="startQuizButton">Start Quiz</button>
+    </div>
+
+    <div id="quizContainer" class="quiz-container" style="display: none;">
+      <div class="quiz-header">
+        <p id="quizProgress"></p>
+        <button id="endQuizButton" class="secondary">End Quiz</button>
+      </div>
+      <div id="quizArea">
+        <div id="quizQuestion" class="quiz-question" aria-live="polite"></div>
+        <div id="quizOptions" class="quiz-options"></div>
+        <button id="nextQuestionButton" style="display: none;">Next Question</button>
+      </div>
+      <div id="quizResults" style="display: none;">
+        <h2 id="quizScore"></h2>
+        <p id="quizMessage"></p>
+        <div class="quiz-results-buttons">
+          <button id="restartQuizButton">Try Again</button>
+          <button id="returnToFlashcardsButton" class="secondary">Back to Flashcards</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer>
+    <p>Powered by Gemini</p>
+    <p>developed by Rishil Babu with ❤️</p>
+  </footer>
