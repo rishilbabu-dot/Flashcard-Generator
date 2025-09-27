@@ -20,7 +20,10 @@
         id="topicInput"
         placeholder="Enter topic (e.g., Indian Cities) or 'Term: Definition' pairs (one per line)"
       ></textarea>
-      <button id="generateButton">Generate Flashcards</button>
+      <div class="button-group">
+        <button id="generateButton">Generate Flashcards</button>
+        <button id="startQuizButton" style="display: none;">Start Quiz</button>
+      </div>
       <div id="errorMessage" class="error-message" aria-live="polite"></div>
     </div>
 
@@ -28,10 +31,6 @@
       <!-- Flashcards will be generated here -->
     </div>
     
-    <div id="quizControls" class="quiz-controls" style="display: none;">
-      <button id="startQuizButton">Start Quiz</button>
-    </div>
-
     <div id="quizContainer" class="quiz-container" style="display: none;">
       <div class="quiz-header">
         <p id="quizProgress"></p>

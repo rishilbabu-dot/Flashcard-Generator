@@ -21,7 +21,6 @@ const errorMessage = document.getElementById('errorMessage') as HTMLDivElement;
 
 // New UI elements for Quiz Mode
 const mainContent = document.getElementById('mainContent') as HTMLDivElement;
-const quizControls = document.getElementById('quizControls') as HTMLDivElement;
 const startQuizButton = document.getElementById(
   'startQuizButton',
 ) as HTMLButtonElement;
@@ -58,7 +57,7 @@ const ai = new GoogleGenAI({apiKey: process.env.API_KEY});
 generateButton.addEventListener('click', async () => {
   const topic = topicInput.value.trim();
   // On new generation, hide quiz controls and clear flashcards
-  quizControls.style.display = 'none';
+  startQuizButton.style.display = 'none';
   flashcardsContainer.textContent = '';
 
   if (!topic) {
@@ -139,7 +138,7 @@ generateButton.addEventListener('click', async () => {
 
         // Show quiz button if enough cards are generated
         if (flashcards.length >= NUM_CHOICES) {
-          quizControls.style.display = 'block';
+          startQuizButton.style.display = 'block';
         } else {
           errorMessage.textContent = `Please generate at least ${NUM_CHOICES} flashcards to start the quiz.`;
         }
@@ -164,7 +163,7 @@ generateButton.addEventListener('click', async () => {
 function startQuiz() {
   mainContent.style.display = 'none';
   flashcardsContainer.style.display = 'none';
-  quizControls.style.display = 'none';
+  startQuizButton.style.display = 'none';
   quizContainer.style.display = 'block';
   quizArea.style.display = 'block';
   quizResults.style.display = 'none';
@@ -253,7 +252,7 @@ function endQuiz() {
   mainContent.style.display = 'block';
   flashcardsContainer.style.display = 'flex';
   if (currentFlashcards.length >= NUM_CHOICES) {
-    quizControls.style.display = 'block';
+    startQuizButton.style.display = 'block';
   }
   quizContainer.style.display = 'none';
 }

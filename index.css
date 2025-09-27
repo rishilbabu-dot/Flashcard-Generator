@@ -138,6 +138,12 @@ textarea:focus {
   box-shadow: 0 0 0 3px var(--light-focus-shadow-color);
 }
 
+.button-group {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
 button {
   background-color: var(--primary-action);
   background-image: none; /* Replaced gradient with solid color */
@@ -266,10 +272,6 @@ button.secondary:hover:not(:disabled) {
   font-size: 1.0em;
   color: light-dark(var(--light-text-secondary), var(--dark-text-secondary));
   line-height: 1.4;
-}
-
-.quiz-controls {
-  margin-top: 30px;
 }
 
 .quiz-container {
